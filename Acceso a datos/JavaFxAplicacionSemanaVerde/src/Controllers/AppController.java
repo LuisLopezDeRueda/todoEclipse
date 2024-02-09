@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 import Modelo.Cliente;
+import Service.Service;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,13 +22,35 @@ public class AppController {
 	public static final String USUARIO = "/pantallas/Usuario.fxml";
 	public static final String FACTURA = "/pantallas/Factura.fxml";
 	private static Stage stage;
-	private static Cliente usuario;
+	protected static Cliente usuario;
+	protected Service service;
 
 	public AppController() {
+		service = new Service();
 	}
 
 	public AppController(Stage Loginstage) {
+		service = new Service();
 		stage = Loginstage;
+	}
+
+	public void salirAplicacion() {
+		Alert a = new Alert(AlertType.CONFIRMATION);
+		a.setHeaderText(null);
+		a.setContentText("¿Seguro que quieres cerrar la aplicación?");
+		a.setTitle("Confirmación");
+		Optional<ButtonType> result = a.showAndWait();
+		if (result.get() == ButtonType.OK) {
+			System.exit(0);
+		}
+	}
+
+	public static Cliente getUsuario() {
+		return usuario;
+	}
+
+	public static void setUsuario(Cliente usuario) {
+		AppController.usuario = usuario;
 	}
 
 	public AppController cambiarVista(String fxml) {
@@ -64,6 +87,13 @@ public class AppController {
 	public void alet(String contenido) {
 		Alert a = new Alert(AlertType.ERROR);
 		a.setTitle("ERROR");
+		a.setContentText(contenido);
+		a.show();
+	}
+
+	public void aletInformativa(String contenido) {
+		Alert a = new Alert(AlertType.INFORMATION);
+		a.setTitle("INFORMACION");
 		a.setContentText(contenido);
 		a.show();
 	}

@@ -18,7 +18,7 @@ public class MongoSession {
 
 	private static final String USER = "ceudam";
 	private static final String PASS = "ceudam";
-	private static final String DATABASE = "dongo";
+	private static final String DATABASE = "tienda";
 	private static final String SERVER = "cluster0.4kr52et.mongodb.net";
 
 	private static MongoDatabase database;

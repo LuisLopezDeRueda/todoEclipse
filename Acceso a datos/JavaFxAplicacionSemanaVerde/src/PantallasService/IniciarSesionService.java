@@ -10,20 +10,29 @@ public class IniciarSesionService extends AppController {
 	private TextField usuario;
 	@FXML
 	private PasswordField contraseña;
-	 
-	
 
 	@FXML
 	public void salir() {
-		salir();
+		salirAplicacion();
 	}
 
 	@FXML
 	public void crearUsuario() {
 		irRegistro();
 	}
+
 	@FXML
 	public void entrar() {
-		irCobrar();
+		if (service.consultarTrabajador(usuario.getText(), contraseña.getText()) == null) {
+			alet("El usuario no existe");
+			limpiar();
+			return;
+		}
+		irUsuario();
 	}
+	public void limpiar() {
+		usuario.setText("");
+		contraseña.setText("");
+	}
+
 }
