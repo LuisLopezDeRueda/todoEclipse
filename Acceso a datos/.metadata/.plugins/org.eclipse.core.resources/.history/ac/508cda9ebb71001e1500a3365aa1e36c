@@ -1,0 +1,70 @@
+package View;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+
+public class PantallaRegistro extends View{
+	public PantallaRegistro() {
+		initialize();
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 669453377663969951L;
+	private JTextField textField;
+
+	private void initialize() {
+		setLayout(null);
+
+		JLabel LanelUsuario = new JLabel("Usuario");
+		LanelUsuario.setBounds(127, 89, 36, 14);
+		add(LanelUsuario);
+
+		JPasswordField passwordField;
+		JLabel LabelPassword = new JLabel("Password");
+		LabelPassword.setBounds(127, 143, 46, 14);
+		add(LabelPassword);
+
+		passwordField = new JPasswordField();
+		passwordField.setEchoChar('*');
+		passwordField.setBounds(127, 169, 107, 20);
+		add(passwordField);
+
+		JButton BotonEntrar = new JButton("Entrar");
+		BotonEntrar.setBounds(249, 198, 63, 23);
+		add(BotonEntrar);
+
+		JButton btnSolicitarAcceso = new JButton("Solicitar Acceso");
+		btnSolicitarAcceso.setBounds(253, 266, 107, 23);
+		add(btnSolicitarAcceso);
+
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.setBounds(370, 266, 53, 23);
+		add(btnSalir);
+		
+		textField = new JTextField();
+		textField.setBounds(127, 114, 107, 20);
+		add(textField);
+		textField.setColumns(10);
+
+		btnSalir.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (JOptionPane.showConfirmDialog(btnSalir, "Estas seguro?", "¿Salir?",
+						JOptionPane.YES_NO_OPTION) != 1) {
+					System.exit(0);
+				} else {
+
+				}
+			}
+		});
+	}
+}

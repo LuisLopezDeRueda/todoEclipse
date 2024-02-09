@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Launcher.java&apos; to &apos;JavaFxAplicacionSemanaVerde/src/Controllers&apos;&#x0D;&#x0A;- Original project: &apos;JavaFX&apos;&#x0D;&#x0A;- Destination element: &apos;JavaFxAplicacionSemanaVerde/src/Controllers&apos;&#x0D;&#x0A;- Original element: &apos;app.app.Launcher.java&apos;" description="Copy compilation unit" destination="=JavaFxAplicacionSemanaVerde/src=/optional=/true=/=/maven.pomderived=/true=/&lt;Controllers" element1="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;app.app{Launcher.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1707157749589" units="1" version="1.0"/>
+</session>

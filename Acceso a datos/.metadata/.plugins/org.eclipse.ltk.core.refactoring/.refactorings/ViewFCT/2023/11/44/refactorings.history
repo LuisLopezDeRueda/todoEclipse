@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename source folder &apos;ViewFCT/Views&apos; to &apos;src&apos;&#x0D;&#x0A;- Original project: &apos;ViewFCT&apos;&#x0D;&#x0A;- Original element: &apos;ViewFCT/Views&apos;&#x0D;&#x0A;- Renamed element: &apos;Views&apos;" description="Rename source folder &apos;Views&apos;" id="org.eclipse.jdt.ui.rename.source.folder" input="/Views" name="src" stamp="1699021754029" version="1.0"/>
+</session>

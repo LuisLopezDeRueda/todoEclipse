@@ -1,0 +1,11 @@
+package View;
+
+public class PantallaBienvenida extends View{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1541745109735952352L;
+
+	
+}

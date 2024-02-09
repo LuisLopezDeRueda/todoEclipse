@@ -1,0 +1,28 @@
+package View;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class SolicitarAcceso extends View{
+	public SolicitarAcceso() {
+		setLayout(null);
+		
+		JLabel lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(136, 57, 46, 14);
+		add(lblUsuario);
+		
+		textUsaurio = new JTextField();
+		textUsaurio.setBounds(136, 82, 86, 20);
+		add(textUsaurio);
+		textUsaurio.setColumns(10);
+		
+		JLabel lblContraseña = new JLabel("Contraseña");
+		lblContraseña.setBounds(136, 114, 46, 14);
+		add(lblContraseña);
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4631879749034200423L;
+	private JTextField textUsaurio;
+}

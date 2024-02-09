@@ -1,0 +1,40 @@
+package Modelo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Persona {
+	private String nombre;
+	private String apellidos;
+	private List<Direccion> direccion;
+
+	public Persona() {
+		direccion = new ArrayList<Direccion>();
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public List<Direccion> getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(List<Direccion> direccion) {
+		this.direccion = direccion;
+	}
+
+
+}

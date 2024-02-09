@@ -1,0 +1,74 @@
+package View;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JComboBox;
+
+public class SolicitarAcceso extends View{
+	public SolicitarAcceso() {
+		setLayout(null);
+		
+		JLabel lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(36, 27, 46, 14);
+		add(lblUsuario);
+		
+		textUsaurio = new JTextField();
+		textUsaurio.setBounds(36, 52, 86, 20);
+		add(textUsaurio);
+		textUsaurio.setColumns(10);
+		
+		JLabel lblContraseña = new JLabel("Contraseña");
+		lblContraseña.setBounds(36, 84, 86, 14);
+		add(lblContraseña);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(36, 111, 86, 20);
+		add(passwordField);
+		
+		JLabel lblRepetirContraseña = new JLabel("Repetir Contraseña");
+		lblRepetirContraseña.setBounds(36, 142, 115, 14);
+		add(lblRepetirContraseña);
+		
+		passwordRepetirContraseña = new JPasswordField();
+		passwordRepetirContraseña.setBounds(36, 167, 86, 20);
+		add(passwordRepetirContraseña);
+		
+		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre.setBounds(166, 27, 46, 14);
+		add(lblNombre);
+		
+		textNombre = new JTextField();
+		textNombre.setColumns(10);
+		textNombre.setBounds(166, 52, 86, 20);
+		add(textNombre);
+		
+		textApellidos = new JTextField();
+		textApellidos.setColumns(10);
+		textApellidos.setBounds(166, 109, 86, 20);
+		add(textApellidos);
+		
+		JLabel lblApellidos = new JLabel("Apellidos");
+		lblApellidos.setBounds(166, 84, 46, 14);
+		add(lblApellidos);
+		
+		JLabel lblCiclos = new JLabel("Ciclo Formativo");
+		lblCiclos.setBounds(166, 142, 86, 14);
+		add(lblCiclos);
+		
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setBounds(166, 166, 88, 22);
+		add(comboBox);
+		
+		
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4631879749034200423L;
+	private JTextField textUsaurio;
+	private JPasswordField passwordField;
+	private JPasswordField passwordRepetirContraseña;
+	private JTextField textNombre;
+	private JTextField textApellidos;
+}

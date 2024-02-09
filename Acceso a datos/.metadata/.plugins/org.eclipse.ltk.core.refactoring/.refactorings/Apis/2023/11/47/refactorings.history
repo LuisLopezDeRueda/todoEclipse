@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;OpenConnection.java&apos; to &apos;Examenes1-4A/src/ceu.dam.ad.examen.ej2services&apos;&#x0D;&#x0A;- Original project: &apos;Apis&apos;&#x0D;&#x0A;- Destination element: &apos;Examenes1-4A/src/ceu.dam.ad.examen.ej2services&apos;&#x0D;&#x0A;- Original element: &apos;EJ5.Service.OpenConnection.java&apos;" description="Copy compilation unit" destination="=Examenes1-4A/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ceu.dam.ad.examen.ej2services" element1="/Ejercicios&lt;EJ5.Service{OpenConnection.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1700589552418" units="1" version="1.0"/>
+</session>

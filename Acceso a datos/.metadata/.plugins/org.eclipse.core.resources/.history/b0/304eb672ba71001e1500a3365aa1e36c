@@ -1,0 +1,12 @@
+package View;
+
+public class SolicitarAcceso extends View{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4631879749034200423L;
+
+
+
+}

@@ -1,0 +1,8 @@
+package View;
+
+public class SolicitarAcceso {
+
+	public SolicitarAcceso() {
+	}
+
+}

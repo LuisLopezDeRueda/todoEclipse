@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="601.0" styleClass="fondo" stylesheets="@login.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.guiLogin.LoginController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <Button layoutX="295.0" layoutY="198.0" mnemonicParsing="false" onAction="#escribirTexto" prefHeight="27.0" prefWidth="80.0" styleClass="buttons" text="Entrar" textFill="WHITE" AnchorPane.topAnchor="198.0" />
+      <TextField fx:id="tfNombre" layoutX="192.0" layoutY="109.0" prefHeight="33.0" prefWidth="183.0" promptText="Usuario" styleClass="textFields" />
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="135.0" layoutY="236.0" prefHeight="25.0" prefWidth="329.0" textAlignment="CENTER" />
+      <PasswordField fx:id="tfPassword" layoutX="192.0" layoutY="154.0" prefHeight="33.0" prefWidth="183.0" promptText="Contraseña" style="-fx-border-radius: 200px;" styleClass="textFields" />
+      <Button layoutX="192.0" layoutY="198.0" mnemonicParsing="false" onAction="#salirAplicacion" prefHeight="27.0" prefWidth="80.0" styleClass="buttons" text="Salir" textFill="WHITE" />
+      <Label fx:id="lblInformation" alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="261.0" prefHeight="25.0" prefWidth="329.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

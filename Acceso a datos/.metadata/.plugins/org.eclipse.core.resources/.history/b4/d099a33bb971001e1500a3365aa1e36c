@@ -1,0 +1,15 @@
+package View;
+
+import javax.swing.JPanel;
+
+public class View extends JPanel{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -120508152664128693L;
+
+	public View() {
+	}
+
+}

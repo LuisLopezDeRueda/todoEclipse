@@ -1,0 +1,20 @@
+package OpenConection;
+
+import org.bson.Document;
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
+public class Test {
+	public static void main(String[] args) {
+		MongoDatabase db = MongoSession.getDataBase();
+		MongoCollection<Document> c = db.getCollection("personas");
+		Document document = new Document();
+		document.append("nombre", "Luis");
+		document.append("apellidos", "López de Rueda Laguna");
+		document.append("dni", "2342423X");
+		document.append("edad", 19);
+
+		c.insertOne(document);
+	}
+}

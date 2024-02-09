@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.guiLogin.PantallasControllers.HTMLEditorController">
+   <children>
+      <HTMLEditor fx:id="html" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="213.0" prefWidth="600.0" />
+      <Button fx:id="boton" layoutX="269.0" layoutY="225.0" mnemonicParsing="false" onAction="#imprimir" text="Imprimir" />
+      <Label fx:id="label" layoutX="10.0" layoutY="250.0" prefHeight="139.0" prefWidth="581.0" />
+   </children>
+</AnchorPane>

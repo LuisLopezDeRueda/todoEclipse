@@ -1,0 +1,11 @@
+package Ejemplo;
+
+public class Patalla2 extends View{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8833986861687969261L;
+	
+
+}

@@ -1,0 +1,19 @@
+package App;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class App {
+	public static void main(String[] args) {
+
+		Set<Integer> set = new HashSet<Integer>();
+
+		/*
+		 * ActoresService actoreService = new ActoresService(); List<Actor> listaActores
+		 * =new ArrayList<>(); try { listaActores = actoreService.consultarActores();
+		 * for (Actor actor : listaActores) { System.out.println(actor); } } catch
+		 * (ActoresServiceException e) { e.printStackTrace();
+		 */
+	}
+
+}

@@ -1,0 +1,27 @@
+1695820716460	Delete element
+1695824303466	Copy packages
+1695824315962	Rename type 'AppPelicula'
+1695824327603	Rename type 'PeliculasDao'
+1695824335868	Rename type 'Pelicula'
+1695824360065	Rename type 'PeliculasException'
+1695824374651	Rename type 'PeliculasService'
+1695824432482	Rename type 'OpenConnection'
+1695824620084	Rename type 'Pelicula'
+1695824829386	Delete element
+1695825806685	Delete element
+1695828578962	Copy packages
+1695828604833	Rename type 'ClientesDao'
+1695828614115	Rename type 'Cliente'
+1695828623774	Rename type 'ClienteException'
+1695828636408	Rename type 'ClienteService'
+1695828650288	Rename type 'OpenConnectionClinte'
+1695828783426	Delete element
+1695829041809	Copy compilation unit
+1695829059180	Copy compilation units
+1695829106243	Copy compilation unit
+1695829270521	Copy compilation unit
+1695829630512	Delete element
+1695830210118	Delete element
+1695994334557	Rename type 'ClienteException'
+1695997466065	Rename package 'Servicee'
+1695997472549	Copy compilation unit

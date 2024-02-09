@@ -1,0 +1,5 @@
+package OpenConection;
+
+public class MongoUtil {
+
+}

@@ -1,0 +1,35 @@
+.buttons{
+  -fx-background-color: #0041b2;
+  -fx-background-radius: 25px;
+  -fx-border-color: #e2e2e2;
+  -fx-fill: white;
+  -fx-border-radius: 25px;
+}
+.buttons:hover{
+  -fx-background-color: #0352da;
+  -fx-border-radius: 25px;
+  -fx-fill: white;
+}
+.textFields{
+-fx-background-radius: 25px;
+-fx-background-color: #ebebeb;
+
+}
+.textFields:hover{
+-fx-background-radius: 25px;
+-fx-background-color: white;
+
+}
+.fondo{
+	-fx-background-image: url("fondo.jpg");
+}
+#rojo{
+	-fx-text-fill: red;
+	-fx-font-size: 20;
+	-fx-font-family:"Helvetica";
+}
+#verde{
+	-fx-text-fill: green;
+	-fx-font-size: 20;
+-fx-font-family:"Helvetica";
+}

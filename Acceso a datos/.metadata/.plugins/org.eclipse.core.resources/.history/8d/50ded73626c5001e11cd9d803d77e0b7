@@ -1,0 +1,29 @@
+package PantallasService;
+
+import Controllers.AppController;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+public class CobrarService extends AppController {
+	@FXML
+	private TextField textField;
+
+	@FXML
+	public void escribir(ActionEvent event) {
+		String value = ((Button) event.getSource()).getText();
+		String valor = textField.getText();
+		textField.setText(valor + value);
+	}
+
+	@FXML
+	public void atras() {
+		irUsuario();
+	}
+
+	@FXML
+	public void factura() {
+		irFactura();
+	}
+}

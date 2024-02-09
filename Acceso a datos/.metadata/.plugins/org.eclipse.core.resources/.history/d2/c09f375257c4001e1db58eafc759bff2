@@ -1,0 +1,6 @@
+package Modelo;
+
+public class Trabajador {
+	private String UUID_trabajador;
+	private String nombre;
+}

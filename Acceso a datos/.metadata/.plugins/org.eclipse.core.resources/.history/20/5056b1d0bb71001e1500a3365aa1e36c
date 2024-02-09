@@ -1,0 +1,6 @@
+package View;
+
+public class PantallaBienvenida extends View{
+
+	
+}

@@ -1,0 +1,20 @@
+package Ejemplo;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+
+public class Patalla3 extends View{
+	public Patalla3() {
+		setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("PATANLLA 3");
+		lblNewLabel.setBounds(20, 27, 87, 14);
+		add(lblNewLabel);
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8833986861687969261L;
+	
+
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.guiLogin.Bienvenida.BienvenidaController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Componentes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#irComboBox" text="ComboBox">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="SOFTKEY_2" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#irDatePicker" text="DatePicker" />
+                  <MenuItem mnemonicParsing="false" onAction="#irColopicker" text="ColorPicker" />
+                  <MenuItem mnemonicParsing="false" onAction="#irSlider" text="Slider" />
+                  <MenuItem mnemonicParsing="false" onAction="#irWebWiew" text="WebView" />
+                  <MenuItem mnemonicParsing="false" onAction="#irHTMLEditor" text="HTMLEditor" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#salir" text="Salir">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesion" />
+                  <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblBienvenida" alignment="CENTER" layoutX="155.0" layoutY="81.0" prefHeight="72.0" prefWidth="275.0" text="Elige la opción que prefieras del menú" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

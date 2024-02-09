@@ -1,0 +1,9 @@
+package View;
+
+import javax.swing.text.View;
+
+public class SolicitarAcceso extends View{
+
+
+
+}

@@ -1,0 +1,4 @@
+Service service = new Service();
+
+		service.crearXml(Libro.createRandomList(10), "C:\\Users\\llopezderueda0480\\Pruebas/libros.xml");
+	}

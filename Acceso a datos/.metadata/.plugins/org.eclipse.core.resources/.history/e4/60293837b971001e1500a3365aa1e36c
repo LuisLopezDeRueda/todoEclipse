@@ -1,0 +1,15 @@
+package View;
+
+import java.awt.Graphics;
+import java.awt.Shape;
+
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Element;
+import javax.swing.text.Position.Bias;
+
+
+public class SolicitarAcceso extends View{
+
+
+
+}
