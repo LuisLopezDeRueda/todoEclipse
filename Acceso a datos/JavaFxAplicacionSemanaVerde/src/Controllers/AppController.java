@@ -21,6 +21,8 @@ public class AppController {
 	public static final String REGISTRAR = "/pantallas/Registrar.fxml";
 	public static final String USUARIO = "/pantallas/Usuario.fxml";
 	public static final String FACTURA = "/pantallas/Factura.fxml";
+	public static final String CREARCLIENTE = "/pantallas/CrearCliente.fxml";
+	public static final String CONSULTARCLIENTE = "/pantallas/UsuarioConsultar.fxml";
 	private static Stage stage;
 	protected static Cliente usuario;
 	protected Service service;
@@ -125,6 +127,15 @@ public class AppController {
 
 	public AppController irUsuario() {
 		return cambiarVista(USUARIO);
+
+	}
+
+	public AppController irCrearCliente() {
+		return cambiarVista(CREARCLIENTE);
+
+	}
+	public AppController irConsultarCliente() {
+		return cambiarVista(CONSULTARCLIENTE);
 
 	}
 

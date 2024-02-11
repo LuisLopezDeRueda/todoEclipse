@@ -5,6 +5,7 @@ import java.util.List;
 
 import Controllers.AppController;
 import Modelo.Articulo;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -35,7 +36,11 @@ public class CobrarService extends AppController {
 	@FXML
 	private Label labelPrecio;
 
+
+
 	public void buscar() {
+		lista = FXCollections.observableArrayList();
+		tabla.setItems(lista);
 		lista.setAll(new ArrayList<Articulo>());
 		tabla.setEffect(new BoxBlur());
 		Task<Void> task = new Task<Void>() {
@@ -44,7 +49,13 @@ public class CobrarService extends AppController {
 
 			@Override
 			protected Void call() throws Exception {
-				// Service de consultar los articulos
+				Articulo articulo = service.consultarArticulo(textField.getText());
+				if (articulo == null) {
+					aletInformativa("No hay articulo con ese codigo de barras");
+					textField.setText("");
+				} else {
+					listaArticulo.add(articulo);
+				}
 				return null;
 			}
 

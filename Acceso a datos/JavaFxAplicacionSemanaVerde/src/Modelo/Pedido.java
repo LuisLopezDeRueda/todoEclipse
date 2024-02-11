@@ -9,7 +9,6 @@ public class Pedido {
 	private UUID uidPedido;
 	private Cliente cliente;
 	private Date fecha;
-	private List<PedidoLinea> lineas;
 	private Boolean Cliente;
 
 	public void setCliente(Boolean cliente) {
@@ -40,17 +39,9 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-	public List<PedidoLinea> getLineas() {
-		return lineas;
-	}
-
-	public void setLineas(List<PedidoLinea> lineas) {
-		this.lineas = lineas;
-	}
-
 	@Override
 	public String toString() {
-		return "Pedido [uidPedido=" + uidPedido + ", fecha=" + fecha + ", lineas=" + lineas + "]";
+		return "Pedido [uidPedido=" + uidPedido + ", fecha=" + fecha + "]";
 	}
 
 	@Override

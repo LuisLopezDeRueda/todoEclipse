@@ -13,10 +13,16 @@ import Modelo.Cliente;
 import Modelo.Trabajador;
 
 public class Service {
-	public void insertarTrabajador(Trabajador trabajador){
+	public void insertarTrabajador(Trabajador trabajador) {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Trabajador> c = db.getCollection("Trabajador", Trabajador.class);
 		c.insertOne(trabajador);
+	}
+
+	public void insertarCliente(Cliente cliente) {
+		MongoDatabase db = MongoSession.getDatabase();
+		MongoCollection<Cliente> c = db.getCollection("Cliente", Cliente.class);
+		c.insertOne(cliente);
 	}
 
 	public void actualizarTrabajador(String nuevaContraseña, String nombre) {
