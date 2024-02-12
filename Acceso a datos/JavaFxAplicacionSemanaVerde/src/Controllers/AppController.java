@@ -3,8 +3,10 @@ package Controllers;
 import java.io.IOException;
 import java.util.Optional;
 
+import Modelo.Articulo;
 import Modelo.Cliente;
 import Service.Service;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,6 +27,8 @@ public class AppController {
 	public static final String CONSULTARCLIENTE = "/pantallas/UsuarioConsultar.fxml";
 	private static Stage stage;
 	protected static Cliente usuario;
+	protected static ObservableList<Articulo> lista;
+
 	protected Service service;
 
 	public AppController() {
@@ -34,6 +38,14 @@ public class AppController {
 	public AppController(Stage Loginstage) {
 		service = new Service();
 		stage = Loginstage;
+	}
+
+	public static ObservableList<Articulo> getLista() {
+		return lista;
+	}
+
+	public static void setLista(ObservableList<Articulo> lista) {
+		AppController.lista = lista;
 	}
 
 	public void salirAplicacion() {
@@ -86,14 +98,14 @@ public class AppController {
 
 	}
 
-	public void alet(String contenido) {
+	public void alert(String contenido) {
 		Alert a = new Alert(AlertType.ERROR);
 		a.setTitle("ERROR");
 		a.setContentText(contenido);
 		a.show();
 	}
 
-	public void aletInformativa(String contenido) {
+	public void alertInformativa(String contenido) {
 		Alert a = new Alert(AlertType.INFORMATION);
 		a.setTitle("INFORMACION");
 		a.setContentText(contenido);
@@ -134,6 +146,7 @@ public class AppController {
 		return cambiarVista(CREARCLIENTE);
 
 	}
+
 	public AppController irConsultarCliente() {
 		return cambiarVista(CONSULTARCLIENTE);
 

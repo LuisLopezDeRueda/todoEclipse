@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1168.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PantallasService.RegistrarService">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1168.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PantallasService.RegistrarService">
    <children>
       <ImageView fitHeight="150.0" fitWidth="614.0" layoutX="414.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,7 +19,7 @@
       <Label layoutX="310.0" layoutY="212.0" prefHeight="38.0" prefWidth="78.0" text="Nombre" />
       <Label layoutX="280.0" layoutY="282.0" prefHeight="38.0" prefWidth="138.0" text="Contraseña" />
       <Button layoutX="626.0" layoutY="385.0" mnemonicParsing="false" onAction="#crearTrabajador" text="Crear trabajador" />
-      <Button layoutX="431.0" layoutY="426.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
+      <Button layoutX="431.0" layoutY="426.0" mnemonicParsing="false" onAction="#atras" text="Atras" />
       <Label layoutX="280.0" layoutY="337.0" prefHeight="38.0" prefWidth="138.0" text="Repetir contraseña" />
       <CheckBox fx:id="cbSuperUsuario" layoutX="437.0" layoutY="389.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="111.0" text="Super usuario" />
       <PasswordField fx:id="contraseña" layoutX="437.0" layoutY="276.0" prefHeight="38.0" prefWidth="292.0" />

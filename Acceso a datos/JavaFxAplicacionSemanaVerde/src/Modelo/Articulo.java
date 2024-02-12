@@ -1,7 +1,7 @@
 package Modelo;
 
 public class Articulo {
-	private Long id;
+	private Integer cantidad;
 	private String descripcion;
 	private String codBarras;
 	private Double precio;
@@ -14,12 +14,12 @@ public class Articulo {
 		this.precio = precio;
 	}
 
-	public Long getId() {
-		return id;
+	public Integer getCantidad() {
+		return cantidad;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
 	}
 
 	public String getDescripcion() {
@@ -40,7 +40,7 @@ public class Articulo {
 
 	@Override
 	public String toString() {
-		return "ID : " + id + " Descripcion : " + descripcion + " precio : " + precio + "\n";
+		return "Cantidad : " + cantidad + " Descripcion : " + descripcion + " precio : " + precio + "\n";
 	}
 
 }

@@ -23,7 +23,7 @@ public class UsuarioService extends AppController {
 				setUsuario(cliente);
 				irCobrar();
 			} else {
-				aletInformativa("No hay usuario con ese dni");
+				alertInformativa("No hay usuario con ese dni");
 			}
 		} else {
 			tfdni.setDisable(false);

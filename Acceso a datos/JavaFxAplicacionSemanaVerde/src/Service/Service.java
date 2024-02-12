@@ -34,7 +34,7 @@ public class Service {
 	}
 
 	public void insertarArticulo(Articulo articulo) throws ArticuloException {
-		if (consultarArticulo(articulo.getDescripcion()) != null) {
+		if (consultarArticulo(articulo.getCodBarras()) != null) {
 			throw new ArticuloException("El articulo ya existe");
 		}
 		MongoDatabase db = MongoSession.getDatabase();
@@ -61,8 +61,8 @@ public class Service {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Articulo> c = db.getCollection("Articulo", Articulo.class);
 		FindIterable<Articulo> result = c.find(Filters.eq("codBarras", codigoBarras));
-		if (result.first() == null) {
-			throw new ArticuloException("No hay aritulos con ese codigo de barras");
+		if(result.first() == null) {
+			throw new ArticuloException("El articulo no existe");
 		}
 		return result.first();
 	}

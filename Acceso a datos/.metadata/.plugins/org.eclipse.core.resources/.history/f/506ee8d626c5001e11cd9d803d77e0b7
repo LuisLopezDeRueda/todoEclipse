@@ -1,7 +1,0 @@
-package PantallasService;
-
-import Controllers.AppController;
-
-public class ContraseñaService extends AppController{
-
-}

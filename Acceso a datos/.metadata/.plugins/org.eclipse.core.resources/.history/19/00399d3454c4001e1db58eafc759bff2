@@ -1,5 +1,0 @@
-package PantallasService;
-
-public class AppController {
-	public static final String INICIARSESION = "/PantallasService/IniciarSesionService.java";
-}

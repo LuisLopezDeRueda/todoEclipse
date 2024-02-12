@@ -18,25 +18,26 @@ public class RegistrarService extends AppController {
 	private CheckBox cbSuperUsuario;
 
 	@FXML
-	public void salir() {
-		salirAplicacion();
+	public void atras() {
+		irIniciarSesion();
 	}
+
 
 	@FXML
 	public void crearTrabajador() {
 		if (contraseña.getText().equals(repetirContraseña.getText())) {
 			if (service.consultarTrabajadorSinContreseña(tfUsuario.getText()) != null) {
-				alet("Ya existe un usuario con ese nombre");
+				alert("Ya existe un usuario con ese nombre");
 				limpiarNombre();
 			} else {
 				service.insertarTrabajador(
 						new Trabajador(tfUsuario.getText(), contraseña.getText(), cbSuperUsuario.isSelected()));
-				aletInformativa("USUARIO CREADO CORRECTAMENTE");
+				alertInformativa("USUARIO CREADO CORRECTAMENTE");
 				irIniciarSesion();
 			}
 
 		} else {
-			alet("Las contraseñas no son iguales");
+			alert("Las contraseñas no son iguales");
 			limpiarContraseñas();
 			return;
 		}

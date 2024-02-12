@@ -15,10 +15,10 @@ public class CrearClienteService extends AppController {
 	public void crearCliente() {
 		if (service.consultarCliente(dni.getText()) == null) {
 			service.insertarCliente(new Cliente(dni.getText(), tfNombre.getText()));
-			aletInformativa("El cliente con el dni " + dni.getText() + " ha sido añadido correctamente");
+			alertInformativa("El cliente con el dni " + dni.getText() + " ha sido añadido correctamente");
 			atras();
 		} else {
-			alet("Cliente existente con ese dni");
+			alert("Cliente existente con ese dni");
 		}
 	}
 

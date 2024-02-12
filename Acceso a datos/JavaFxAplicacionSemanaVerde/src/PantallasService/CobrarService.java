@@ -1,7 +1,7 @@
+
 package PantallasService;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Controllers.AppController;
 import Modelo.Articulo;
@@ -17,6 +17,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.BoxBlur;
 
 public class CobrarService extends AppController {
@@ -26,7 +27,7 @@ public class CobrarService extends AppController {
 	private TableView<Articulo> tabla;
 	private ObservableList<Articulo> lista;
 	@FXML
-	private TableColumn<Articulo, Long> columnaID;
+	private TableColumn<Articulo, Integer> columCanti;
 	@FXML
 	private TableColumn<Articulo, String> columnaNombre;
 	@FXML
@@ -35,27 +36,33 @@ public class CobrarService extends AppController {
 	private ProgressBar consultarBar;
 	@FXML
 	private Label labelPrecio;
+	private Boolean entrar;
 
+	public CobrarService() {
+		entrar = true;
+	}
 
+	@FXML
+	public void initialize() {
+		columCanti.setCellValueFactory(new PropertyValueFactory<Articulo, Integer>("cantidad"));
+		columnaNombre.setCellValueFactory(new PropertyValueFactory<Articulo, String>("descripcion"));
+		columnaPrecio.setCellValueFactory(new PropertyValueFactory<Articulo, Double>("precio"));
+
+		lista = FXCollections.observableArrayList();
+		lista.setAll(new ArrayList<Articulo>());
+		tabla.setItems(lista);
+
+	}
 
 	public void buscar() {
-		lista = FXCollections.observableArrayList();
-		tabla.setItems(lista);
-		lista.setAll(new ArrayList<Articulo>());
 		tabla.setEffect(new BoxBlur());
 		Task<Void> task = new Task<Void>() {
 
-			List<Articulo> listaArticulo;
+			Articulo articulo = new Articulo();
 
 			@Override
 			protected Void call() throws Exception {
-				Articulo articulo = service.consultarArticulo(textField.getText());
-				if (articulo == null) {
-					aletInformativa("No hay articulo con ese codigo de barras");
-					textField.setText("");
-				} else {
-					listaArticulo.add(articulo);
-				}
+				articulo = service.consultarArticulo(textField.getText());
 				return null;
 			}
 
@@ -64,15 +71,18 @@ public class CobrarService extends AppController {
 				tabla.setEffect(null);
 				super.succeeded();
 				updateProgress(100, 100);
-				lista.addAll(listaArticulo);
+				actualizarLista(articulo);
 				tabla.setOpacity(1.0);
+				actualizarPrecio();
+				// textField.setText("");
 			}
 
 			@Override
 			protected void failed() {
 				super.failed();
+				tabla.setEffect(null);
 				updateProgress(100, 100);
-				alet("Datos no encontrados");
+				alert("Datos no encontrados");
 			}
 		};
 		new Thread(task).start();
@@ -92,6 +102,31 @@ public class CobrarService extends AppController {
 
 	@FXML
 	public void factura() {
+		setLista(lista);
 		irFactura();
+	}
+
+	public void actualizarPrecio() {
+		Double precio = 0.0;
+		for (Articulo articulo : lista) {
+			Double precioMeter = articulo.getPrecio() * articulo.getCantidad();
+			precio += precioMeter;
+		}
+		labelPrecio.setText("Precio total: " + precio);
+	}
+
+	public void actualizarLista(Articulo arti) {
+		for (Articulo articulo : lista) {
+			if (arti.getCodBarras().equals(articulo.getCodBarras())) {
+				articulo.setCantidad(articulo.getCantidad() + 1);
+				entrar = false;
+				break;
+			}
+		}
+		if (entrar) {
+			lista.add(arti);
+			entrar = true;
+		}
+
 	}
 }
