@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ceu.dam.javafx.examen.PantallasController.IniciarSesionController">
+   <children>
+      <Label layoutX="168.0" layoutY="128.0" prefHeight="17.0" prefWidth="53.0" text="Usuario" />
+      <Label layoutX="168.0" layoutY="162.0" text="Contraseña" />
+      <TextField fx:id="tfNombre" layoutX="253.0" layoutY="124.0" promptText="mi usuario" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+      <PasswordField fx:id="psContrseña" layoutX="253.0" layoutY="158.0" promptText="mi contraseña" style="-fx-border-radius: 10; -fx-background-radius: 10;" stylesheets="@../Css/Css.css" />
+      <DatePicker fx:id="datePicker" layoutX="158.0" layoutY="200.0" onAction="#elegirFecha" prefHeight="25.0" prefWidth="141.0" />
+      <Button fx:id="btAceptar" disable="true" layoutX="300.0" layoutY="200.0" mnemonicParsing="false" onAction="#entrar" prefHeight="25.0" prefWidth="102.0" text="Acceder" />
+      <CheckBox fx:id="chkBox" layoutX="343.0" layoutY="288.0" mnemonicParsing="false" onAction="#activarBoton" text="Aceptar las condicones" />
+   </children>
+</AnchorPane>
