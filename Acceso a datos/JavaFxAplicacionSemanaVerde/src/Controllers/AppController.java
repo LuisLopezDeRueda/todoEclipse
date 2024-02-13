@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import Modelo.Articulo;
 import Modelo.Cliente;
+import Modelo.Trabajador;
 import Service.Service;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,8 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 public class AppController {
@@ -25,8 +26,10 @@ public class AppController {
 	public static final String FACTURA = "/pantallas/Factura.fxml";
 	public static final String CREARCLIENTE = "/pantallas/CrearCliente.fxml";
 	public static final String CONSULTARCLIENTE = "/pantallas/UsuarioConsultar.fxml";
+	public static final String ARTICULOCREAR = "/pantallas/ArticuloCrear.fxml";
 	private static Stage stage;
 	protected static Cliente usuario;
+	protected static Trabajador trabajador;
 	protected static ObservableList<Articulo> lista;
 
 	protected Service service;
@@ -46,6 +49,14 @@ public class AppController {
 
 	public static void setLista(ObservableList<Articulo> lista) {
 		AppController.lista = lista;
+	}
+
+	public static Trabajador getTrabajador() {
+		return trabajador;
+	}
+
+	public static void setTrabajador(Trabajador trabajador) {
+		AppController.trabajador = trabajador;
 	}
 
 	public void salirAplicacion() {
@@ -124,6 +135,11 @@ public class AppController {
 
 	public AppController irCobrar() {
 		return cambiarVista(COBRAR);
+
+	}
+
+	public AppController irArticuloCrear() {
+		return cambiarVista(ARTICULOCREAR);
 
 	}
 

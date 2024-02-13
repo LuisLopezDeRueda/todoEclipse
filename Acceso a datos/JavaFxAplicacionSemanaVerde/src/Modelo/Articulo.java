@@ -6,6 +6,17 @@ public class Articulo {
 	private String codBarras;
 	private Double precio;
 
+	public Articulo(String descripcion, Double precio, String codBarras) {
+		this.descripcion = descripcion;
+		this.precio = precio;
+		cantidad = 1;
+		this.codBarras = codBarras;
+	}
+
+	public Articulo() {
+
+	}
+
 	public Double getPrecio() {
 		return precio;
 	}

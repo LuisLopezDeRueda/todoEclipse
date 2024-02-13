@@ -74,7 +74,7 @@ public class CobrarService extends AppController {
 				actualizarLista(articulo);
 				tabla.setOpacity(1.0);
 				actualizarPrecio();
-				// textField.setText("");
+				textField.setText("");
 			}
 
 			@Override

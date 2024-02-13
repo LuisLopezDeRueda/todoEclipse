@@ -1,3 +1,2 @@
-tengo q hacer todo lo del cliente crear 
-cliente buscar clietne sin cliente aplicando 
-si es cliente o no, y todo lo demas
+Preguntar Abel lo de tabla como se refresca
+Terminar forma de pago

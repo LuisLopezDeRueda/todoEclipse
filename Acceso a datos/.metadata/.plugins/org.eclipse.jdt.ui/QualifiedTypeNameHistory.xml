@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
-    <fullyQualifiedTypeName name="javafx.scene.text.Text"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.ProgressBar"/>
-    <fullyQualifiedTypeName name="ceu.dam.javafx.practica3.service.AnimalesServices"/>
-    <fullyQualifiedTypeName name="ceu.dam.javafx.practica3.modelo.Animal"/>
-    <fullyQualifiedTypeName name="ceu.dam.javafx.practica3.AppController"/>
-    <fullyQualifiedTypeName name="ceu.dam.javafx.practica3.pantallasServices.ConsultaService"/>
-    <fullyQualifiedTypeName name="javafx.scene.effect.Bloom"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.CheckBox"/>
-    <fullyQualifiedTypeName name="javafx.scene.layout.AnchorPane"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.Alert"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.Alert.AlertType"/>
     <fullyQualifiedTypeName name="jakarta.persistence.PersistenceException"/>
     <fullyQualifiedTypeName name="jakarta.persistence.ManyToMany"/>
     <fullyQualifiedTypeName name="jakarta.persistence.JoinTable"/>
@@ -32,20 +19,14 @@
     <fullyQualifiedTypeName name="javax.swing.text.Document"/>
     <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
     <fullyQualifiedTypeName name="org.bson.Document"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="Modelo.Persona"/>
     <fullyQualifiedTypeName name="Modelo.Direccion"/>
     <fullyQualifiedTypeName name="com.mongodb.client.result.InsertOneResult"/>
     <fullyQualifiedTypeName name="javafx.fxml.FXML"/>
     <fullyQualifiedTypeName name="javafx.event.Event"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
     <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
     <fullyQualifiedTypeName name="Modelo.Cliente"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.PasswordField"/>
-    <fullyQualifiedTypeName name="Controllers.AppController"/>
-    <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
     <fullyQualifiedTypeName name="javafx.scene.effect.BoxBlur"/>
     <fullyQualifiedTypeName name="javafx.concurrent.Task"/>
     <fullyQualifiedTypeName name="ceu.dam.mongo.Service.Service"/>
@@ -57,7 +38,26 @@
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Controllers.AppController"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
     <fullyQualifiedTypeName name="Modelo.Articulo"/>
-    <fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
+    <fullyQualifiedTypeName name="javax.swing.text.AbstractDocument.BranchElement"/>
+    <fullyQualifiedTypeName name="PantallasService.ArticuloCrearService"/>
+    <fullyQualifiedTypeName name="PantallasService.UsuarioConsultarService"/>
+    <fullyQualifiedTypeName name="PantallasService.UsuarioService"/>
+    <fullyQualifiedTypeName name="Modelo.Trabajador"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javax.security.auth.login.AppConfigurationEntry"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.PasswordField"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.DatePicker"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.CheckBox"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="ceu.dam.javafx.examen.AppController"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
     <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TableColumn"/>
+    <fullyQualifiedTypeName name="javafx.scene.control.TableView"/>
+    <fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
+    <fullyQualifiedTypeName name="ceu.dam.javafx.examen.services.ExamenService"/>
 </qualifiedTypeNameHistroy>

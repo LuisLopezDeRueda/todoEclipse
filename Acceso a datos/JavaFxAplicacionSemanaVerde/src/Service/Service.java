@@ -1,9 +1,13 @@
 package Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bson.conversions.Bson;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
@@ -11,6 +15,7 @@ import com.mongodb.client.model.Updates;
 import Modelo.Articulo;
 import Modelo.Cliente;
 import Modelo.Trabajador;
+import Modelo.Venta;
 
 public class Service {
 	public void insertarTrabajador(Trabajador trabajador) {
@@ -33,10 +38,7 @@ public class Service {
 		c.updateMany(filtro, update);
 	}
 
-	public void insertarArticulo(Articulo articulo) throws ArticuloException {
-		if (consultarArticulo(articulo.getCodBarras()) != null) {
-			throw new ArticuloException("El articulo ya existe");
-		}
+	public void insertarArticulo(Articulo articulo) {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Articulo> c = db.getCollection("Articulo", Articulo.class);
 		c.insertOne(articulo);
@@ -61,7 +63,7 @@ public class Service {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Articulo> c = db.getCollection("Articulo", Articulo.class);
 		FindIterable<Articulo> result = c.find(Filters.eq("codBarras", codigoBarras));
-		if(result.first() == null) {
+		if (result.first() == null) {
 			throw new ArticuloException("El articulo no existe");
 		}
 		return result.first();
@@ -73,4 +75,23 @@ public class Service {
 		FindIterable<Cliente> result = c.find(Filters.eq("dni", dni));
 		return result.first();
 	}
+
+	public List<Articulo> consultarArticulos() {
+		MongoDatabase db = MongoSession.getDatabase();
+		MongoCollection<Articulo> c = db.getCollection("Articulo", Articulo.class);
+		FindIterable<Articulo> result = c.find();
+		MongoCursor<Articulo> cursor = result.cursor();
+		List<Articulo> articulos = new ArrayList<Articulo>();
+		while (cursor.hasNext()) {
+			articulos.add(cursor.next());
+		}
+		return articulos;
+	}
+
+	public void insertarVenta(Venta venta) {
+		MongoDatabase db = MongoSession.getDatabase();
+		MongoCollection<Venta> c = db.getCollection("Venta", Venta.class);
+		c.insertOne(venta);
+	}
+
 }

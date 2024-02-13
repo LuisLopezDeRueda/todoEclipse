@@ -1,6 +1,7 @@
 package PantallasService;
 
 import Controllers.AppController;
+import Modelo.Trabajador;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -23,13 +24,17 @@ public class IniciarSesionService extends AppController {
 
 	@FXML
 	public void entrar() {
-		if (service.consultarTrabajador(usuario.getText(), contraseña.getText()) == null) {
+		Trabajador trabajador = service.consultarTrabajador(usuario.getText(), contraseña.getText());
+		if (trabajador == null) {
 			alert("El usuario no existe");
 			limpiar();
 			return;
 		}
-		irUsuario();
+		setTrabajador(trabajador);
+		UsuarioService services = (UsuarioService) irUsuario();
+		services.empezar();
 	}
+
 	public void limpiar() {
 		usuario.setText("");
 		contraseña.setText("");
