@@ -33,10 +33,12 @@
       <Button layoutX="899.0" layoutY="296.0" mnemonicParsing="false" onAction="#escribir" prefHeight="88.0" prefWidth="80.0" text="1" />
       <Button layoutX="979.0" layoutY="296.0" mnemonicParsing="false" onAction="#escribir" prefHeight="88.0" prefWidth="80.0" text="2" />
       <Button layoutX="1058.0" layoutY="296.0" mnemonicParsing="false" onAction="#escribir" prefHeight="88.0" prefWidth="80.0" text="3" />
-      <Button layoutX="900.0" layoutY="384.0" mnemonicParsing="false" onAction="#escribir" prefHeight="88.0" prefWidth="239.0" text="0" />
+      <Button layoutX="900.0" layoutY="384.0" mnemonicParsing="false" onAction="#escribir" prefHeight="63.0" prefWidth="239.0" text="0" />
       <Button layoutX="995.0" layoutY="599.0" mnemonicParsing="false" onAction="#factura" prefHeight="43.0" prefWidth="144.0" text="Terminar compra" />
       <Button layoutX="14.0" layoutY="610.0" mnemonicParsing="false" onAction="#atras" prefHeight="43.0" prefWidth="144.0" text="Atras" />
       <ProgressBar fx:id="consultarBar" layoutX="167.0" layoutY="620.0" prefHeight="21.0" prefWidth="353.0" progress="0.0" />
-      <Button layoutX="995.0" layoutY="500.0" mnemonicParsing="false" onAction="#buscar" prefHeight="43.0" prefWidth="144.0" text="Buscar" />
+      <Button layoutX="1020.0" layoutY="457.0" mnemonicParsing="false" onAction="#buscar" prefHeight="43.0" prefWidth="114.0" text="Buscar" />
+      <Button fx:id="btnBorrar" layoutX="899.0" layoutY="457.0" mnemonicParsing="false" onAction="#borrar" prefHeight="43.0" prefWidth="114.0" />
+      <Button fx:id="btnBolsa" layoutX="899.0" layoutY="506.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="114.0" />
    </children>
 </AnchorPane>

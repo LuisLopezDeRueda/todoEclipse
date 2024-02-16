@@ -24,13 +24,14 @@
       </TableView>
       <Label fx:id="labelPrecio" layoutX="551.0" layoutY="603.0" prefHeight="35.0" prefWidth="322.0" text="Precio total" textAlignment="CENTER" />
       <Button layoutX="1000.0" layoutY="592.0" mnemonicParsing="false" onAction="#terminarCompra" prefHeight="43.0" prefWidth="144.0" text="Terminar compra" />
-      <RadioButton layoutX="900.0" layoutY="137.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="76.0" text="Tarjeta" />
-      <RadioButton layoutX="900.0" layoutY="179.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="99.0" text="Efectivo" />
+      <RadioButton fx:id="rndTarjeta" layoutX="900.0" layoutY="137.0" mnemonicParsing="false" onAction="#tarjeta" prefHeight="49.0" prefWidth="76.0" text="Tarjeta" />
+      <RadioButton fx:id="rndEfectivo" layoutX="900.0" layoutY="179.0" mnemonicParsing="false" onAction="#efectivo" prefHeight="29.0" prefWidth="99.0" text="Efectivo" />
       <Button layoutX="14.0" layoutY="599.0" mnemonicParsing="false" onAction="#salir" prefHeight="43.0" prefWidth="144.0" text="Atras" />
       <ImageView fitHeight="89.0" fitWidth="220.0" layoutX="900.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Recursos/badulake.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="lblDescuento" layoutX="551.0" layoutY="625.0" prefHeight="35.0" prefWidth="322.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

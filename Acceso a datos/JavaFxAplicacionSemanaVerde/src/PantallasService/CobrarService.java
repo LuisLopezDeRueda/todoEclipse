@@ -9,7 +9,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -19,10 +18,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.BoxBlur;
+import javafx.scene.image.ImageView;
 
 public class CobrarService extends AppController {
 	@FXML
 	private TextField textField;
+	@FXML
+	private Button btnBorrar;
+	@FXML
+	private Button btnBolsa;
 	@FXML
 	private TableView<Articulo> tabla;
 	private ObservableList<Articulo> lista;
@@ -36,11 +40,7 @@ public class CobrarService extends AppController {
 	private ProgressBar consultarBar;
 	@FXML
 	private Label labelPrecio;
-	private Boolean entrar;
-
-	public CobrarService() {
-		entrar = true;
-	}
+	private Double precio;
 
 	@FXML
 	public void initialize() {
@@ -51,7 +51,17 @@ public class CobrarService extends AppController {
 		lista = FXCollections.observableArrayList();
 		lista.setAll(new ArrayList<Articulo>());
 		tabla.setItems(lista);
+		//btnBolsa.setGraphic(new ImageView(getClass().getResource("/Recursos/bolsa.png").toString()));
+		btnBorrar.setGraphic(new ImageView(getClass().getResource("/Recursos/borrar.png").toString()));
+	}
 
+	@FXML
+	public void borrar() {
+		try {
+			textField.setText(textField.getText().substring(0, textField.getText().length() - 1));
+		} catch (StringIndexOutOfBoundsException e) {
+
+		}
 	}
 
 	public void buscar() {
@@ -68,6 +78,7 @@ public class CobrarService extends AppController {
 
 			@Override
 			protected void succeeded() {
+
 				tabla.setEffect(null);
 				super.succeeded();
 				updateProgress(100, 100);
@@ -75,6 +86,7 @@ public class CobrarService extends AppController {
 				tabla.setOpacity(1.0);
 				actualizarPrecio();
 				textField.setText("");
+				tabla.refresh();
 			}
 
 			@Override
@@ -103,11 +115,12 @@ public class CobrarService extends AppController {
 	@FXML
 	public void factura() {
 		setLista(lista);
-		irFactura();
+		FacturaService factura = (FacturaService) irFactura();
+		factura.actualizarPrecio(precio);
 	}
 
 	public void actualizarPrecio() {
-		Double precio = 0.0;
+		precio = 0.0;
 		for (Articulo articulo : lista) {
 			Double precioMeter = articulo.getPrecio() * articulo.getCantidad();
 			precio += precioMeter;
@@ -116,6 +129,7 @@ public class CobrarService extends AppController {
 	}
 
 	public void actualizarLista(Articulo arti) {
+		Boolean entrar = true;
 		for (Articulo articulo : lista) {
 			if (arti.getCodBarras().equals(articulo.getCodBarras())) {
 				articulo.setCantidad(articulo.getCantidad() + 1);
@@ -127,6 +141,5 @@ public class CobrarService extends AppController {
 			lista.add(arti);
 			entrar = true;
 		}
-
 	}
 }

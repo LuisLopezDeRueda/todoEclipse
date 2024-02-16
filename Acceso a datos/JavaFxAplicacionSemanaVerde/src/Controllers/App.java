@@ -10,7 +10,7 @@ public class App extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		AppController app = new AppController(primaryStage);
 		app.cambiarVista(AppController.INICIARSESION);
-		primaryStage.initStyle(StageStyle.UNDECORATED);
+		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
 

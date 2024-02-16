@@ -2,14 +2,16 @@ package PantallasService;
 
 import Controllers.AppController;
 import Modelo.Articulo;
+import Modelo.Venta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class FacturaService extends AppController {
@@ -24,6 +26,14 @@ public class FacturaService extends AppController {
 	private TableColumn<Articulo, Double> columnaPrecio;
 	@FXML
 	private Label labelPrecio;
+	@FXML
+	private RadioButton rndEfectivo;
+	@FXML
+	private RadioButton rndTarjeta;
+
+	@FXML
+	private Label lblDescuento;
+	private Double precioTotal;
 
 	@FXML
 	public void initialize() {
@@ -35,13 +45,17 @@ public class FacturaService extends AppController {
 		tabla.setItems(lista);
 	}
 
-	public void actualizarPrecio() {
-		Double precio = 0.0;
-		for (Articulo articulo : lista) {
-			Double precioMeter = articulo.getPrecio() * articulo.getCantidad();
-			precio += precioMeter;
+	public void actualizarPrecio(Double precio) {
+
+		if (getUsuario() == null) {
+			precioTotal = precio;
+			labelPrecio.setText("Precio total: \t" + precio);
+		} else {
+			precioTotal = precio * 0.95;
+			labelPrecio.setText("Precio total: \t" + precio * 0.95);
+			lblDescuento.setText("Descuento por ser cliente: " + precio * 0.05);
 		}
-		labelPrecio.setText("Precio total: " + precio);
+
 	}
 
 	@FXML
@@ -51,11 +65,23 @@ public class FacturaService extends AppController {
 
 	@FXML
 	public void terminarCompra() {
-		Alert a = new Alert(AlertType.INFORMATION);
-		a.setTitle("Correcto");
-		a.setContentText("Pedido terminado correctamente");
-		a.show();
+		Venta factura = new Venta();
+		factura.setCliente(usuario);
+		factura.setArticulos(lista);
+		factura.setPrecioTotal(precioTotal);
+		service.insertarVenta(factura);
+		alertInformativa("Pago terminado correctamente");
 		irUsuario();
+	}
+
+	@FXML
+	public void tarjeta() {
+		rndEfectivo.setSelected(false);
+	}
+
+	@FXML
+	public void efectivo() {
+		rndTarjeta.setSelected(false);
 	}
 
 }
