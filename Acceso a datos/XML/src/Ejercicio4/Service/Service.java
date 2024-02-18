@@ -17,9 +17,7 @@ import Ejercicio4.Modelo.Edicion;
 import Ejercicio4.Modelo.Libro;
 
 public class Service {
-	
 
-	
 	public void crearXml(List<Libro> lista, String ruta) {
 		DocumentBuilderFactory fabrica = DocumentBuilderFactory.newInstance();
 		try {
@@ -45,7 +43,7 @@ public class Service {
 				}
 				Element edicionesTag = xml.createElement("ediciones");
 				librosTag.appendChild(edicionesTag);
-				
+
 				List<Edicion> listaEdiciones = libro.getEdiciones();
 				for (Edicion edicion : listaEdiciones) {
 					Element edicionTag = xml.createElement("edicion");
