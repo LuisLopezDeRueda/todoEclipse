@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="cliente"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="seq"/>
+			<item value="startsWith"/>
+			<item value="autores_seq"/>
 			<item value="usuario"/>
 			<item value="datePicker.setValue(LocalDate.now());"/>
 			<item value="Persona"/>
@@ -20,11 +23,9 @@
 			<item value="&#x09;&#x09;"/>
 			<item value="listaLibros"/>
 			<item value="lblError"/>
-			<item value="artista3Tag"/>
-			<item value="setSelectedIndex"/>
-			<item value="model"/>
 		</list>
 		<list key="replacehistory">
+			<item value="equals"/>
 			<item value="cliente"/>
 			<item value="Coche"/>
 			<item value="cantidad"/>
