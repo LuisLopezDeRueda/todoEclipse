@@ -4,22 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1168.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PantallasService.IniciarSesionService">
+<AnchorPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1168.0" stylesheets="@../Recursos/Css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PantallasService.IniciarSesionService">
    <children>
-      <ImageView fitHeight="158.0" fitWidth="679.0" layoutX="406.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Recursos/badulake.jpg" />
-         </image></ImageView>
-      <TextField fx:id="usuario" layoutX="437.0" layoutY="212.0" prefHeight="38.0" prefWidth="292.0" />
-      <Label layoutX="310.0" layoutY="212.0" prefHeight="38.0" prefWidth="78.0" text="Usuario" />
-      <Label layoutX="310.0" layoutY="282.0" prefHeight="38.0" prefWidth="78.0" text="Contraseña" />
-      <Button layoutX="626.0" layoutY="337.0" mnemonicParsing="false" onAction="#crearUsuario" text="Crear trabajador" />
-      <Button layoutX="681.0" layoutY="457.0" mnemonicParsing="false" onAction="#entrar" text="Entrar" />
-      <Button layoutX="437.0" layoutY="457.0" mnemonicParsing="false" onAction="#salir" text="Salir" />
-      <PasswordField fx:id="contraseña" layoutX="437.0" layoutY="282.0" prefHeight="38.0" prefWidth="292.0" />
+      <TextField fx:id="usuario" layoutX="437.0" layoutY="247.0" prefHeight="38.0" prefWidth="292.0" />
+      <Label layoutX="437.0" layoutY="203.0" prefHeight="38.0" prefWidth="78.0" text="Usuario" />
+      <Label layoutX="437.0" layoutY="298.0" prefHeight="38.0" prefWidth="78.0" text="Contraseña" />
+      <Button id="botones" layoutX="616.0" layoutY="389.0" mnemonicParsing="false" onAction="#crearUsuario" prefHeight="31.0" prefWidth="108.0" text="Crear trabajador" />
+      <Button id="botones" layoutX="632.0" layoutY="455.0" mnemonicParsing="false" onAction="#entrar" prefHeight="31.0" prefWidth="92.0" text="Entrar" />
+      <Button id="botones" layoutX="437.0" layoutY="455.0" mnemonicParsing="false" onAction="#salir" prefHeight="31.0" prefWidth="92.0" text="Salir" />
+      <PasswordField fx:id="contraseña" layoutX="437.0" layoutY="336.0" prefHeight="38.0" prefWidth="292.0" />
    </children>
 </AnchorPane>

@@ -51,7 +51,7 @@ public class CobrarService extends AppController {
 		lista = FXCollections.observableArrayList();
 		lista.setAll(new ArrayList<Articulo>());
 		tabla.setItems(lista);
-		//btnBolsa.setGraphic(new ImageView(getClass().getResource("/Recursos/bolsa.png").toString()));
+		btnBolsa.setGraphic(new ImageView(getClass().getResource("/Recursos/bolsa.png").toString()));
 		btnBorrar.setGraphic(new ImageView(getClass().getResource("/Recursos/borrar.png").toString()));
 	}
 
@@ -62,6 +62,11 @@ public class CobrarService extends AppController {
 		} catch (StringIndexOutOfBoundsException e) {
 
 		}
+	}
+
+	@FXML
+	public void bolsa() {
+		actualizarLista(new Articulo("Bolsa", 0.1, "99999"));
 	}
 
 	public void buscar() {
@@ -84,9 +89,8 @@ public class CobrarService extends AppController {
 				updateProgress(100, 100);
 				actualizarLista(articulo);
 				tabla.setOpacity(1.0);
-				actualizarPrecio();
 				textField.setText("");
-				tabla.refresh();
+
 			}
 
 			@Override
@@ -109,7 +113,8 @@ public class CobrarService extends AppController {
 
 	@FXML
 	public void atras() {
-		irUsuario();
+		UsuarioService services = (UsuarioService) irUsuario();
+		services.empezar();
 	}
 
 	@FXML
@@ -117,6 +122,12 @@ public class CobrarService extends AppController {
 		setLista(lista);
 		FacturaService factura = (FacturaService) irFactura();
 		factura.actualizarPrecio(precio);
+	}
+
+	public void actualizarLista(ObservableList<Articulo> lista) {
+		this.lista = lista;
+		tabla.setItems(lista);
+		
 	}
 
 	public void actualizarPrecio() {
@@ -141,5 +152,7 @@ public class CobrarService extends AppController {
 			lista.add(arti);
 			entrar = true;
 		}
+		actualizarPrecio();
+		tabla.refresh();
 	}
 }

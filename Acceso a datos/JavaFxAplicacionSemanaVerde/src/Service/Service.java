@@ -3,14 +3,11 @@ package Service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bson.conversions.Bson;
-
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
 
 import Modelo.Articulo;
 import Modelo.Cliente;
@@ -28,14 +25,6 @@ public class Service {
 		MongoDatabase db = MongoSession.getDatabase();
 		MongoCollection<Cliente> c = db.getCollection("Cliente", Cliente.class);
 		c.insertOne(cliente);
-	}
-
-	public void actualizarTrabajador(String nuevaContraseña, String nombre) {
-		MongoDatabase db = MongoSession.getDatabase();
-		MongoCollection<Trabajador> c = db.getCollection("Trabajador", Trabajador.class);
-		Bson filtro = Filters.regex("nombre", nombre);
-		Bson update = Updates.set("contraseña", nuevaContraseña);
-		c.updateMany(filtro, update);
 	}
 
 	public void insertarArticulo(Articulo articulo) {

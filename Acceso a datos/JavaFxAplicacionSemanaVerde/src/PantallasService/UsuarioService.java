@@ -16,6 +16,7 @@ public class UsuarioService extends AppController {
 
 	public UsuarioService() {
 		correcto = false;
+		
 	}
 
 	@FXML
@@ -23,11 +24,10 @@ public class UsuarioService extends AppController {
 		irArticuloCrear();
 	}
 
-
 	public void empezar() {
 		if (trabajador.getSuperUsuario()) {
 			btArticulo.setVisible(true);
-		}else {
+		} else {
 			btArticulo.setVisible(false);
 		}
 	}

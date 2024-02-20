@@ -24,7 +24,7 @@ public class ArticuloCrearService extends AppController {
 		} catch (
 
 		NumberFormatException e) {
-			alert("El precio indicado no es valido");
+			alert("Datos indicados no validos");
 		}
 	}
 

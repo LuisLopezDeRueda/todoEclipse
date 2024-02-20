@@ -22,14 +22,18 @@ public class RegistrarService extends AppController {
 		irIniciarSesion();
 	}
 
-
 	@FXML
 	public void crearTrabajador() {
-		if (contraseña.getText().equals(repetirContraseña.getText())) {
+		if (contraseña.getText().isBlank() || repetirContraseña.getText().isBlank()) {
+			alert("Las contraseñas no pueden estar vacias");
+			limpiarContraseñas();
+			return;
+		} else if (contraseña.getText().equals(repetirContraseña.getText())) {
 			if (service.consultarTrabajadorSinContreseña(tfUsuario.getText()) != null) {
 				alert("Ya existe un usuario con ese nombre");
 				limpiarNombre();
 			} else {
+
 				service.insertarTrabajador(
 						new Trabajador(tfUsuario.getText(), contraseña.getText(), cbSuperUsuario.isSelected()));
 				alertInformativa("USUARIO CREADO CORRECTAMENTE");
@@ -37,7 +41,7 @@ public class RegistrarService extends AppController {
 			}
 
 		} else {
-			alert("Las contraseñas no son iguales");
+			alert("Contraseñas no validas");
 			limpiarContraseñas();
 			return;
 		}

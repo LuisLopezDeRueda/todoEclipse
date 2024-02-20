@@ -14,7 +14,7 @@ public class Articulo {
 	}
 
 	public Articulo() {
-
+		cantidad = 1;
 	}
 
 	public Double getPrecio() {

@@ -1,13 +1,14 @@
 package PantallasService;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 import Controllers.AppController;
 import Modelo.Articulo;
 import Modelo.Venta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
@@ -26,6 +27,8 @@ public class FacturaService extends AppController {
 	private TableColumn<Articulo, Double> columnaPrecio;
 	@FXML
 	private Label labelPrecio;
+	@FXML
+	private Label labelDinero;
 	@FXML
 	private RadioButton rndEfectivo;
 	@FXML
@@ -49,29 +52,36 @@ public class FacturaService extends AppController {
 
 		if (getUsuario() == null) {
 			precioTotal = precio;
-			labelPrecio.setText("Precio total: \t" + precio);
+			labelDinero.setText(precio.toString());
 		} else {
 			precioTotal = precio * 0.95;
-			labelPrecio.setText("Precio total: \t" + precio * 0.95);
-			lblDescuento.setText("Descuento por ser cliente: " + precio * 0.05);
+			labelDinero.setText(precio.toString());
+			lblDescuento.setText(
+					"Descuento por ser cliente: " + new DecimalFormat("#.##").format(new BigDecimal(precio * 0.05)));
 		}
 
 	}
 
 	@FXML
 	public void salir() {
-		irCobrar();
+		CobrarService controler = (CobrarService) irCobrar();
+		controler.actualizarLista(lista);
 	}
 
 	@FXML
 	public void terminarCompra() {
-		Venta factura = new Venta();
-		factura.setCliente(usuario);
-		factura.setArticulos(lista);
-		factura.setPrecioTotal(precioTotal);
-		service.insertarVenta(factura);
-		alertInformativa("Pago terminado correctamente");
-		irUsuario();
+		if (rndEfectivo.isSelected() || rndTarjeta.isSelected()) {
+			Venta factura = new Venta();
+			factura.setCliente(usuario);
+			factura.setArticulos(lista);
+			factura.setPrecioTotal(precioTotal);
+			service.insertarVenta(factura);
+			alertInformativa("Pago terminado correctamente");
+			UsuarioService services = (UsuarioService) irUsuario();
+			services.empezar();
+		} else {
+			alertInformativa("Inserte una forma de pago");
+		}
 	}
 
 	@FXML
