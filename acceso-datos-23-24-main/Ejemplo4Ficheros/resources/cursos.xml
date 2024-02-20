@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cursos>
+	<curso>
+		<nombre>DAM</nombre>
+		<horas>7</horas>
+		<alumnos>
+			<alumno dni="4324X">Pilar Ávila</alumno>
+			<alumno dni="3432D">Carlos Camacho</alumno>
+		</alumnos>
+	</curso>
+	<curso>
+		<nombre>ASIR</nombre>
+		<horas>7</horas>
+		<alumnos>
+			<alumno dni="4324X">Alberto Ávila</alumno>
+			<alumno dni="3432D">Carlos Camacho</alumno>
+		</alumnos>
+	</curso>
+	<curso>
+		<nombre>DAM</nombre>
+		<horas>7</horas>
+		<alumnos>
+			<alumno dni="4324X">Alberto Ávila</alumno>
+			<alumno dni="3432D">Carlos Camacho</alumno>
+		</alumnos>
+	</curso>
+	<curso>
+		<nombre>ASIR</nombre>
+		<horas>7</horas>
+		<alumnos>
+			<alumno dni="4324X">Alberto Ávila</alumno>
+			<alumno dni="3432D">Carlos Camacho</alumno>
+		</alumnos>
+	</curso>
+	<curso>
+		<nombre>DAM</nombre>
+		<horas>7</horas>
+		<alumnos>
+			<alumno dni="4324X">Alberto Ávila</alumno>
+			<alumno dni="3432D">Carlos Camacho</alumno>
+		</alumnos>
+	</curso>
+	<curso>
+		<nombre>ASIR</nombre>
+		<horas>7</horas>
+		<alumnos>
+			<alumno dni="4324X">Alberto Ávila</alumno>
+			<alumno dni="3432D">Carlos Camacho</alumno>
+		</alumnos>
+	</curso>
+</cursos>
